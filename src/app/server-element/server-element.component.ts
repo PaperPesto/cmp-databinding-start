@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ServerElementComponent implements OnInit {
 
   // Sto esponendo questa proprietà ai parenti di questo component
-  @Input() element: {type: string, name: string, content: string};
+  // In ingresso gli passo un alias per targettarlo da fuori
+  @Input('srvElement') element: {type: string, name: string, content: string};
 
   constructor() { }
 
