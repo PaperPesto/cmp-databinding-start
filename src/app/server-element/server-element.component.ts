@@ -8,7 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ServerElementComponent implements OnInit {
 
   // Sto esponendo questa proprietà ai parenti di questo component
-  @Input() element: {type: string, name: string, content: string};
+  // La bindo con la parentesi quadra e gli posso sare un alias da richiamare
+  // dentro la quadra. Il binding delle proprietà dei component funziona dentro il component dell'html
+  @Input('srvElement') element: {type: string, name: string, content: string};
 
   constructor() { }
 
