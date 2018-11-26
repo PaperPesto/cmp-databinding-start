@@ -1,4 +1,7 @@
 <div class="container">
+  <!-- il cockpit component espone due eventi bindabili (custom) definito nel typescript -->
+  <!-- serverCreated è l'evento lanciato dal cockpit-component che qui viene intercettato e bindato su 
+  due metodi dell'app.component -->
   <app-cockpit
   (serverCreated)="onServerAdded($event)"
   (bpCreated)="onBlueprintAdded($event)"
