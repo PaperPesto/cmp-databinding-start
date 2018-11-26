@@ -3,21 +3,14 @@
     <p>Add peshe new Servers or blueprints!</p>
 
     <label>Server Name</label>
-    <!-- 1) TWO WAY DATA BINDING -->
-    <!-- <input type="text" class="form-control" [(ngModel)]="newServerName"> -->
-
-    <!-- 2) LOCAL REFERENCE con hash #: binda tutto l'elemento html con la variabile definita nell'hash-->
+    <!-- Qui viene usato il local reference -->
     <input type="text" class="form-control" #serverNameInput>
 
     <label>Server Content</label>
-    <!-- TWO WAY DATA BINDING -->
-    <!-- <input type="text" class="form-control" [(ngModel)]="newServerContent"> -->
+    <!-- Qui viene usato il two-way data binding -->
     <input type="text" class="form-control" [(ngModel)]="newServerContent">
 
     <br>
-    <!-- 1) TWO WAY DATA BINDING -->
-    <!-- <button class="btn btn-primary" (click)="onAddServer()">Add Server</button> -->
-    <!-- 2) LOCAL REFERENCE -->
     <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
     <button class="btn btn-primary" (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
   </div>
