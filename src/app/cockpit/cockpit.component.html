@@ -3,12 +3,12 @@
     <p>Add peshe new Servers or blueprints!</p>
 
     <label>Server Name</label>
-    <!-- Qui viene usato il local reference -->
+    <!-- Qui viene usato il local reference passato direttamente al metodo -->
     <input type="text" class="form-control" #serverNameInput>
 
     <label>Server Content</label>
-    <!-- Qui viene usato il two-way data binding -->
-    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <!-- Local reference tramite ViewChild -->
+    <input type="text" class="form-control" #serverContentInput>
 
     <br>
     <button class="btn btn-primary" (click)="onAddServer(serverNameInput)">Add Server</button>
