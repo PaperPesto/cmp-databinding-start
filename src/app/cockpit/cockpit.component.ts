@@ -17,6 +17,18 @@ export class CockpitComponent implements OnInit {
 
   constructor() { }
 
+  // Lifecycle hook. Angular supporta molti lifecicle hook.
+  // Quando angular trova un nuovo component da istanziare (cioé quando trova il tag app-component nell'html)
+  // entra in una sequenza di operazioni a cascata (lifecycle hook) e lo sviluppatore può entrare nella sequenza
+  // 1) ngOnChanges: called after a bound input property changes (quando la proprietà riceve nuovi valori)
+  // 2) ngOnInit: chiamato quando viene inizializzato il component (dopo il costruttore) e le proprietà sono pronte
+  // 3) ngDoCheck: gira moltissime volte quando angular cerca di controllare se una proprietà è cambiata (tipo polling, ma angular lo fa molto efficentemente)
+  // 4) ngAfterContentInit: chiamato dopo che il content chiamato da ng-content viene proiettato
+  // 5) ngAfterContentCheckd: chiamato oni volta che il contenuto proiettato (projected) viene controllato per vedere se una proprietà è cambiata
+  // 6) ngAfterViewInit: quando il component ha finito l'inizializzazione
+  // 7) ngAfterViewCHecked: chiamato quando la vista del component (e i figli) sono state inizializzati
+  // 8) ngAfterViewChecked: chiamato ogni volta che la view (e i figli) sono stato controllati
+  // 9) ngOnDestroy: chiamato quando il component sta per essere ditrutto
   ngOnInit() {
   }
 
