@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy, AfterViewChecked, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -22,6 +22,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   // invece di fare figlio1 -> padre -> figlio2 si utilizzano i services
   @Input('srvElement') element: { type: string, name: string, content: string };
   @Input() name: string;
+  @ViewChild('heading') header: ElementRef; // C'è l'hashtag sull'html di questo component
 
   constructor() {
     console.log('constructor called!');
@@ -47,6 +48,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   // il content è l'html che viene proiettato dentro questo component dal cmponent padre
   ngAfterContentInit(){
     console.log('ngAfterContentInit called!');
+    console.log('Text content (should be empty): ' + this.header.nativeElement.textContent);
   }
 
   ngAfterContentChecked(){
@@ -55,6 +57,7 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
 
   ngAfterViewInit(){
     console.log('ngAfterViewInit called!');
+    console.log('Text content (should be filled): ' + this.header.nativeElement.textContent);
   }
 
   ngAfterViewChecked(){
