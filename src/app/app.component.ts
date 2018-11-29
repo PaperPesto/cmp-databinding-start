@@ -26,4 +26,14 @@ export class AppComponent {
       content: serverData.serverContent
     });
   }
+
+  // Reagisce al cambiamento di una proprietà. In questo caso stampo a schermo anche
+  // il valore precedente e quello successivo
+  onChangeFirst(){
+    this.serverElements[0].name = 'Changed';
+  }
+
+  onDestroyFirst(){
+    this.serverElements.splice(0, 1);
+  }
 }
